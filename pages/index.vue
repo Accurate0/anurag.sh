@@ -4,8 +4,10 @@
   >
     <div class="capitalize text-4xl md:text-7xl">Anurag Singh</div>
     <div class="text-xs md:text-lg">
-      6<sup>th</sup> Place at WACTF (3<sup>rd</sup> place on the end of the
-      1<sup>st</sup> day)
+      6<sup>th</sup> Place at WACTF (3<sup>rd</sup> at the end of the 1<sup
+        >st</sup
+      >
+      day)
     </div>
     <div
       class="select-none flex text-center flex-col md:gap-3 gap-6 text-4xl md:text-1xl"
