@@ -5,7 +5,7 @@ export default {
     fallback: '404.html',
   },
   head: {
-    title: 'anurag singh',
+    title: 'Anurag Singh',
     htmlAttrs: {
       lang: 'en',
     },
