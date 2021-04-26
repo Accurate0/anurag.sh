@@ -4,7 +4,7 @@
   >
     <div class="capitalize text-4xl md:text-7xl">Anurag Singh</div>
     <div class="text-xs md:text-lg">
-      6<sup>th</sup> Place at
+      software engineer <b class="text-2xl">∣</b> 6<sup>th</sup> Place at
       <a
         href="https://capture.tf/"
         style="font-weight: inherit; color: inherit; text-decoration: none"
