@@ -1,0 +1,13 @@
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+.container {
+    color: #F9FAFB;
+    background-color: #282A2E;
+}
+
+.container :active {
+    color: #1D1F21;
+    background: radial-gradient(circle,#fffc00 3%,#ff7a00 69%,#ab5200 100%);
+}
