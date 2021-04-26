@@ -10,15 +10,12 @@
 <script>
 export default {
   async asyncData({ $content, params, _error }) {
-    const page = await $content(params.slug, 'index').fetch()
+    const page = await $content(
+      'blog',
+      params.slug === undefined ? 'index' : params.slug
+    ).fetch()
     return {
       page,
-    }
-  },
-
-  head() {
-    return {
-      title: this.$route.params.slug,
     }
   },
 }

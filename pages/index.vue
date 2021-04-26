@@ -32,10 +32,6 @@
 export default {
   layout: 'index',
 
-  head: {
-    titleTemplate: 'anurag singh',
-  },
-
   methods: {
     specialToggle() {
       if (this.$colorMode.preference === 'default') {

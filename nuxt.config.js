@@ -5,7 +5,7 @@ export default {
     fallback: '404.html',
   },
   head: {
-    titleTemplate: '%s | anurag singh',
+    title: 'anurag singh',
     htmlAttrs: {
       lang: 'en',
     },
@@ -13,6 +13,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
+      { property: 'og:title', content: 'anurag singh' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },

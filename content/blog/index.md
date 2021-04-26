@@ -2,4 +2,4 @@
 title: blog
 ---
 
-coming soon
+coming soon<sup>tm</sup>

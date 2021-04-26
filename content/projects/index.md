@@ -2,4 +2,7 @@
 title: projects
 ---
 
-coming soon
+## <nuxt-link to="/projects/website">this website</nuxt-link>
+
+
+## more coming soon
