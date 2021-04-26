@@ -4,9 +4,13 @@
   >
     <div class="capitalize text-4xl md:text-7xl">Anurag Singh</div>
     <div class="text-xs md:text-lg">
-      6<sup>th</sup> Place at WACTF (3<sup>rd</sup> at the end of the 1<sup
-        >st</sup
+      6<sup>th</sup> Place at
+      <a
+        href="https://capture.tf/"
+        style="font-weight: inherit; color: inherit; text-decoration: none"
+        >WACTF</a
       >
+      (3<sup>rd</sup> at the end of the 1<sup>st</sup>
       day)
     </div>
     <div
