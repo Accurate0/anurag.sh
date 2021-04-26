@@ -1,13 +1,47 @@
-body {
+.page-enter-active,
+.page-leave-active,
+.layout-enter-active,
+.layout-leave-active {
+  transition: opacity .1s
+}
+
+.page-enter,
+.page-leave-active,
+.layout-enter,
+.layout-leave-active {
+  opacity: 0
+}
+
+h1, h2, h3, h4, h5, h6, body {
     font-family: 'Poppins', sans-serif !important;
+    margin: 0;
+}
+
+:root {
+    --color: #F9FAFB;
+    --bg: #1A1B1D;
+}
+
+.special {
+  --bg: red;
+  --color: #1D1F21;
+  --gradient: radial-gradient(circle,#fffc00 3%,#ff7a00 69%,#ab5200 100%);
+}
+
+body {
+    background-color: var(--bg);
+    background-image: var(--gradient);
 }
 
 .container {
-    color: #F9FAFB;
-    background-color: #282A2E;
+    color: var(--color);
 }
 
-.container :active {
-    color: #1D1F21;
-    background: radial-gradient(circle,#fffc00 3%,#ff7a00 69%,#ab5200 100%);
+a, a:hover, a:link, a:active, a:visited {
+    font-family: 'Poppins', sans-serif !important;
+    color: #4f97d4;
+    text-decoration: none;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
 }

@@ -1,8 +1,11 @@
 export default {
   ssr: false,
   target: 'static',
+  generate: {
+    fallback: '404.html',
+  },
   head: {
-    title: 'anurag.sh',
+    titleTemplate: '%s | anurag singh',
     htmlAttrs: {
       lang: 'en',
     },
@@ -22,11 +25,28 @@ export default {
     ],
   },
 
+  server: {
+    port: 3000,
+    host: '0.0.0.0',
+  },
+
+  colorMode: {
+    classSuffix: '',
+  },
+
+  windicss: {
+    preflight: false,
+  },
+
   css: ['~/assets/style'],
   plugins: [],
   components: true,
-  buildModules: ['@nuxt/typescript-build', 'nuxt-windicss'],
+  buildModules: [
+    '@nuxt/typescript-build',
+    'nuxt-windicss',
+    '@nuxtjs/color-mode',
+  ],
 
-  modules: [],
+  modules: ['@nuxt/content'],
   build: {},
 }
