@@ -41,7 +41,7 @@
     "husky": "^6.0.0",
     "nuxt-windicss": "^0.4.4",
     "prettier": "^2.3.0",
-    "sass": "^1.32.11",
+    "sass": "^1.32.13",
     "sass-loader": "11"
   }
 }
