@@ -1,6 +1,15 @@
 <template>
   <div
-    class="lowercase subpixel-antialiased flex gap-6 flex-col items-center justify-center h-screen"
+    class="
+      lowercase
+      subpixel-antialiased
+      flex
+      gap-6
+      flex-col
+      items-center
+      justify-center
+      h-screen
+    "
   >
     <div class="capitalize text-5xl md:text-7xl">Anurag Singh</div>
     <div class="md:text-lg hidden md:block">
