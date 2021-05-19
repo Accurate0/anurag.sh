@@ -42,6 +42,6 @@
     "nuxt-windicss": "^0.7.4",
     "prettier": "^2.3.0",
     "sass": "^1.32.11",
-    "sass-loader": "11"
+    "sass-loader": "10"
   }
 }
