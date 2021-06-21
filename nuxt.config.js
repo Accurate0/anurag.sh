@@ -3,7 +3,9 @@ export default {
   target: 'static',
   generate: {
     fallback: '404.html',
+    routes: ['/blog', '/projects', '/projects/website'],
   },
+
   head: {
     title: 'Anurag Singh',
     htmlAttrs: {
@@ -19,8 +21,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       {
-        ref: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap',
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Source+Sans+Pro&display=swap',
       },
     ],
   },

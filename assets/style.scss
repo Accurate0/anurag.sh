@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, body {
 
 :root {
     --color: #F9FAFB;
-    --bg: #1A1B1D;
+    --bg: #131314;
     --links: #7ac873;
 }
 
@@ -39,10 +39,9 @@ body {
 }
 
 a, a:hover, a:link, a:active, a:visited {
-    font-family: 'Poppins', sans-serif !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
     color: var(--links);
     text-decoration: none;
-    font-weight: 600;
     border: 0;
     cursor: pointer;
 }

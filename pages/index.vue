@@ -11,19 +11,10 @@
       h-screen
     "
   >
-    <div class="capitalize text-5xl md:text-7xl">Anurag Singh</div>
-    <div class="md:text-lg hidden md:block">
-      software engineer <b class="lg:text-2xl">∣</b> 6<sup>th</sup> Place at
-      <a
-        href="https://capture.tf/"
-        style="font-weight: inherit; color: inherit; text-decoration: none"
-        >WACTF</a
-      >
-      (3<sup>rd</sup> at the end of the 1<sup>st</sup>
-      day)
-    </div>
+    <div class="capitalize text-4xl md:text-7xl">Anurag Singh</div>
+    <div class="md:text-2xl hidden md:block">software engineer</div>
     <div
-      class="select-none flex text-center flex-col gap-3 text-2xl md:text-1xl"
+      class="select-none flex text-center flex-col gap-3 text-2xl md:text-2xl"
     >
       <div>
         <nuxt-link to="/blog">blog</nuxt-link>
@@ -54,11 +45,8 @@ export default {
 
   methods: {
     specialToggle() {
-      if (this.$colorMode.preference === 'default') {
-        this.$colorMode.preference = 'special'
-      } else {
-        this.$colorMode.preference = 'default'
-      }
+      this.$colorMode.preference =
+        this.$colorMode.preference === 'default' ? 'special' : 'default'
     },
   },
 }
