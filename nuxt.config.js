@@ -36,12 +36,7 @@ export default {
   css: ['~/assets/style'],
   plugins: [],
   components: true,
-  buildModules: [
-    '@nuxt/typescript-build',
-    'nuxt-windicss',
-    '@nuxtjs/color-mode',
-  ],
-
+  buildModules: ['nuxt-windicss', '@nuxtjs/color-mode'],
   modules: ['@nuxt/content'],
   build: {},
 }
