@@ -42,7 +42,7 @@
     "lint-staged": "^11.1.2",
     "nuxt-windicss": "^1.2.4",
     "prettier": "^2.4.0",
-    "sass": "^1.35.1",
+    "sass": "^1.39.2",
     "sass-loader": "10"
   }
 }
