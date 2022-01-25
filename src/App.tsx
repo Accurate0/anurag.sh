@@ -6,7 +6,7 @@ import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
 import NotFound from "./components/NotFound";
-import Background from "./images/background.png";
+import Background from "./images/background.jpg";
 
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
