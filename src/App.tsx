@@ -5,6 +5,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 import Home from "./pages/Home";
 import Blog from "./pages/Blog";
 import Projects from "./pages/Projects";
+import NotFound from "./components/NotFound";
 import Background from "./images/background.png";
 
 const useStyles = createStyles((theme, _params, getRef) => {
@@ -21,15 +22,27 @@ const useStyles = createStyles((theme, _params, getRef) => {
     drawer: {
       backgroundColor: "#1E272B",
       width: "370px",
+      "&:focus:not(:focus-visible)": {
+        boxShadow:
+          "0 1px 3px rgb(0 0 0 / 5%), rgb(0 0 0 / 5%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px",
+      },
+      "&:focus-visible": {
+        boxShadow:
+          "0 1px 3px rgb(0 0 0 / 5%), rgb(0 0 0 / 5%) 0px 20px 25px -5px, rgb(0 0 0 / 4%) 0px 10px 10px -5px",
+      },
     },
-    ".fade-enter": { opacity: 0, transform: "translate(0, 25px)", zIndex: 1 },
-    ".fade-enter.fade-enter-active": {
+    "transition-enter": {
+      opacity: 0,
+      transform: "translate(0, 25px)",
+      zIndex: 1,
+    },
+    "transition-enter-active": {
       opacity: 1,
       transform: "translate(0, 0)",
       transition: "opacity 250ms ease-out, transform 300ms ease",
     },
-    ".fade-exit": { opacity: 1, transform: "translate(0, 0)" },
-    ".fade-exit.fade-exit-active": {
+    "transition-exit": { opacity: 1, transform: "translate(0, 0)" },
+    "transition-exit-active": {
       opacity: 0,
       transform: "translate(0, 30px)",
       transition: "opacity 250ms ease-out, transform 300ms ease",
@@ -49,11 +62,6 @@ const useStyles = createStyles((theme, _params, getRef) => {
         outline: "none",
       },
     },
-    removeHighlight: {
-      "&:focus-visible": {
-        outline: "none",
-      },
-    },
   };
 });
 
@@ -69,6 +77,7 @@ const App = () => {
         opened={true}
         onClose={() => {}}
         noOverlay
+        noFocusTrap
         noCloseOnClickOutside
         noCloseOnEscape
         hideCloseButton
@@ -86,22 +95,28 @@ const App = () => {
                 ? "Anurag Singh"
                 : getNameFromPath(location.pathname)}
             </Text>
+            {location.pathname === "/" && (
+              <Text size="xl" color="white">
+                Software Engineer
+              </Text>
+            )}
             <br />
             <TransitionGroup>
               <CSSTransition
                 key={location.pathname}
                 classNames={{
-                  enter: classes[".fade-enter"],
-                  exit: classes[".fade-exit"],
-                  exitActive: classes[".fade-exit.fade-exit-active"],
-                  enterActive: classes[".fade-enter.fade-enter-active"],
+                  enter: classes["transition-enter"],
+                  exit: classes["transition-exit"],
+                  exitActive: classes["transition-exit-active"],
+                  enterActive: classes["transition-enter-active"],
                 }}
                 timeout={200}
               >
                 <Routes location={location}>
-                  <Route path="*" element={<Home />} />
+                  <Route path="/" element={<Home />} />
                   <Route path="/blog" element={<Blog />} />
                   <Route path="/projects" element={<Projects />} />
+                  <Route path="*" element={<NotFound />} />
                 </Routes>
               </CSSTransition>
             </TransitionGroup>

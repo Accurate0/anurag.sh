@@ -18,44 +18,47 @@ const useStyles = createStyles((theme, _params, getRef) => {
 
 const Home = () => {
   const { classes } = useStyles();
-  const links: { [key: string]: { href: string; external?: boolean } } = {
-    blog: { href: "blog" },
-    projects: { href: "projects" },
-    email: { href: "mailto:contact@anurag.sh", external: true },
-    github: { href: "https://github.com/Accurate0", external: true },
-    linkedin: {
-      href: "https://linkedin.com/in/anurag-singh8/",
-      external: true,
-    },
-  };
+  const links = [
+    <Text color="white" component={Link} to="blog" className={classes.links}>
+      blog
+    </Text>,
+    <Text
+      color="white"
+      component={Link}
+      to="projects"
+      className={classes.links}
+    >
+      projects
+    </Text>,
+    <Text
+      color="white"
+      component="a"
+      href={"mailto:contact@anurag.sh"}
+      className={classes.links}
+    >
+      email
+    </Text>,
+    <Text
+      color="white"
+      component="a"
+      href={"https://github.com/Accurate0"}
+      className={classes.links}
+    >
+      github
+    </Text>,
+    <Text
+      color="white"
+      component="a"
+      href={"https://linkedin.com/in/anurag-singh8/"}
+      className={classes.links}
+    >
+      linkedin
+    </Text>,
+  ];
 
   return (
     <Group direction="column" grow spacing="xs">
-      {Object.keys(links).map((link) => (
-        <>
-          {links[link].external ? (
-            <Text
-              color="white"
-              component="a"
-              href={links[link].href}
-              key={link}
-              className={classes.links}
-            >
-              {link}
-            </Text>
-          ) : (
-            <Text
-              color="white"
-              component={Link}
-              to={links[link].href}
-              key={link}
-              className={classes.links}
-            >
-              {link}
-            </Text>
-          )}
-        </>
-      ))}
+      {links.map((link) => link)}
     </Group>
   );
 };
