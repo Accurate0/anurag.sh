@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme, _params, getRef) => {
   return {
-    removeHighlight: {
+    links: {
+      transition: "all .3s ease-in-out",
       "&:focus-visible, &:focus": {
         outline: "none",
         boxShadow: "none",
+      },
+      "&:hover": {
+        color: "rgb(90, 90, 90)",
       },
     },
   };
@@ -35,7 +39,7 @@ const Home = () => {
               component="a"
               href={links[link].href}
               key={link}
-              className={classes.removeHighlight}
+              className={classes.links}
             >
               {link}
             </Text>
@@ -45,7 +49,7 @@ const Home = () => {
               component={Link}
               to={links[link].href}
               key={link}
-              className={classes.removeHighlight}
+              className={classes.links}
             >
               {link}
             </Text>
