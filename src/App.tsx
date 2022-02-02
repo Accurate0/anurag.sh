@@ -15,12 +15,13 @@ const useStyles = createStyles((theme, _params, getRef) => {
       backgroundSize: "cover",
       position: "fixed",
       top: 0,
-      left: "370px",
+      left: "320px",
       minWidth: "100%",
       minHeight: "100%",
     },
     drawer: {
-      backgroundColor: "#1E272B",
+      background:
+        "linear-gradient(90deg, #1E272B, 90%, rgba(238, 117, 70, 0.8) 90%);",
       width: "370px",
       "&:focus:not(:focus-visible)": {
         boxShadow:
@@ -57,6 +58,7 @@ const useStyles = createStyles((theme, _params, getRef) => {
     },
     drawerGroup: {
       paddingTop: "166.5px",
+      paddingRight: "35px",
       textAlign: "right",
       "&:hover": {
         outline: "none",
