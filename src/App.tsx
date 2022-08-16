@@ -1,4 +1,4 @@
-import { Container, createStyles, Drawer, Group, Text } from "@mantine/core";
+import { Container, createStyles, Drawer, Stack, Text } from "@mantine/core";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -75,23 +75,9 @@ const App = () => {
 
   return (
     <div className={classes.background}>
-      <Drawer
-        opened={true}
-        onClose={() => {}}
-        noOverlay
-        noFocusTrap
-        noCloseOnClickOutside
-        noCloseOnEscape
-        hideCloseButton
-        className={classes.drawer}
-      >
+      <Drawer opened={true} onClose={() => {}} className={classes.drawer}>
         <Container className={classes.drawerText}>
-          <Group
-            direction="column"
-            grow
-            spacing="xs"
-            className={classes.drawerGroup}
-          >
+          <Stack spacing="xs" className={classes.drawerGroup}>
             <Text color="white" className={classes.titleText}>
               {location.pathname === "/"
                 ? "Anurag Singh"
@@ -122,7 +108,7 @@ const App = () => {
                 </Routes>
               </CSSTransition>
             </TransitionGroup>
-          </Group>
+          </Stack>
         </Container>
       </Drawer>
     </div>

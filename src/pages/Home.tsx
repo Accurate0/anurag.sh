@@ -1,4 +1,4 @@
-import { createStyles, Group, Text } from "@mantine/core";
+import { createStyles, Stack, Text } from "@mantine/core";
 import { Link } from "react-router-dom";
 
 const useStyles = createStyles((theme, _params, getRef) => {
@@ -56,11 +56,7 @@ const Home = () => {
     </Text>,
   ];
 
-  return (
-    <Group direction="column" grow spacing="xs">
-      {links.map((link) => link)}
-    </Group>
-  );
+  return <Stack spacing="xs">{links.map((link) => link)}</Stack>;
 };
 
 export default Home;
