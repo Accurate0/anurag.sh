@@ -75,7 +75,12 @@ const App = () => {
 
   return (
     <div className={classes.background}>
-      <Drawer opened={true} onClose={() => {}} className={classes.drawer}>
+      <Drawer
+        opened={true}
+        onClose={() => {}}
+        className={classes.drawer}
+        withCloseButton={false}
+      >
         <Container className={classes.drawerText}>
           <Stack spacing="xs" className={classes.drawerGroup}>
             <Text color="white" className={classes.titleText}>
