@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter';
+  margin: 0;
+}
+
+a, a:hover, a:visited {
+  text-decoration: none;
+  color: #0d4471;
+}
