@@ -36,6 +36,7 @@
   "type": "module",
   "dependencies": {
     "@vercel/node": "^3.0.10",
-    "@vercel/og": "^0.5.20"
+    "@vercel/og": "^0.5.20",
+    "react": "^18.2.0"
   }
 }
