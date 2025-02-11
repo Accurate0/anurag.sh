@@ -7,12 +7,14 @@ use axum::{
     Router,
 };
 use axum_extra::extract::CookieJar;
+use tower::ServiceBuilder;
 use tower_http::{
     services::ServeDir,
     trace::{DefaultOnRequest, DefaultOnResponse, TraceLayer},
     LatencyUnit,
 };
 use tracing::Level;
+use tunnelbana_etags::{ETagLayer, ETagMap};
 
 #[derive(Template)]
 #[template(path = "index.html")]
@@ -113,10 +115,16 @@ async fn main() -> anyhow::Result<()> {
                 .latency_unit(LatencyUnit::Millis),
         );
 
+    let path = std::path::PathBuf::from("static");
+    let etags = ETagMap::new(&path).expect("Failed to generate etags");
+    let etag_mw = ETagLayer::new(etags);
+    let serve_dir = ServeDir::new(path);
+    let service = ServiceBuilder::new().layer(etag_mw).service(serve_dir);
+
     let app = Router::new()
         .route("/", get(index))
         .route("/health", get(health))
-        .nest_service("/static", ServeDir::new("static"))
+        .nest_service("/static", service)
         .layer(trace_layer)
         .with_state(AppState {});
 

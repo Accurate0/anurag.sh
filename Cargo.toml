@@ -16,3 +16,5 @@ anyhow = "1.0.95"
 tower-http = { version = "0.6.2", features = ["fs", "trace"] }
 itertools = "0.14.0"
 axum-extra = { version = "0.10.0", features = ["cookie"] }
+tunnelbana-etags = "0.1.1"
+tower = "0.5.2"
