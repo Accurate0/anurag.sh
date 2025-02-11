@@ -116,7 +116,7 @@ async fn main() -> anyhow::Result<()> {
         );
 
     let path = std::path::PathBuf::from("static");
-    let etags = ETagMap::new(&path).expect("Failed to generate etags");
+    let etags = ETagMap::new(&path)?;
     let etag_mw = ETagLayer::new(etags);
     let serve_dir = ServeDir::new(path);
     let service = ServiceBuilder::new().layer(etag_mw).service(serve_dir);
