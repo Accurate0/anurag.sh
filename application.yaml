@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: ingress-home
+  name: anurag-sh
   namespace: argocd
 spec:
   syncPolicy:
@@ -9,14 +9,14 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    repoURL: https://github.com/Accurate0/ingress-home.git
+    repoURL: https://github.com/Accurate0/anurag-sh.git
     path: kubernetes
     kustomize:
       images:
-        - ingress-home=ghcr.io/accurate0/ingress-home:${ARGOCD_APP_REVISION}
+        - anurag-sh=ghcr.io/accurate0/anurag-sh:${ARGOCD_APP_REVISION}
   destination:
     server: https://kubernetes.default.svc
-    namespace: ingress-home
+    namespace: anurag-sh
 operation:
   initiatedBy:
     username: github-actions
