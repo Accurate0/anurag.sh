@@ -37,9 +37,13 @@ const loadDefaultTheme = () => {
     window.dispatchEvent(
       new CustomEvent(eventName, { detail: { theme: "dark" } }),
     );
-  } else {
+  } else if (current === null) {
     window.dispatchEvent(
       new CustomEvent(eventName, { detail: { theme: "default" } }),
+    );
+  } else {
+    window.dispatchEvent(
+      new CustomEvent(eventName, { detail: { theme: current } }),
     );
   }
 };
