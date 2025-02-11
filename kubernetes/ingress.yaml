@@ -1,0 +1,35 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: anurag-sh
+  namespace: anurag-sh
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  ingressClassName: nginx
+  rules:
+    - host: anurag.id.au
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: anurag-sh
+                port:
+                  number: 80
+    - host: anurag.sh
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: anurag-sh
+                port:
+                  number: 80
+  tls:
+    - secretName: anurag-sh-tls
+      hosts:
+        - anurag.sh
+        - anurag.id.au

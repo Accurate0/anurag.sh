@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: anurag-sh
+  namespace: anurag-sh
+spec:
+  selector:
+    matchLabels:
+      app: anurag-sh
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: anurag-sh
+    spec:
+      serviceAccountName: anurag-sh
+      tolerations:
+        - key: "group"
+          operator: "Equal"
+          value: "external"
+          effect: "NoSchedule"
+      containers:
+        - name: anurag-sh
+          image: anurag-sh:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
