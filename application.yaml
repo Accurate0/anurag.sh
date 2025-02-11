@@ -9,7 +9,7 @@ spec:
       - CreateNamespace=true
   project: default
   source:
-    repoURL: https://github.com/Accurate0/anurag-sh.git
+    repoURL: https://github.com/Accurate0/anurag.sh.git
     path: kubernetes
     kustomize:
       images:
