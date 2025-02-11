@@ -13,7 +13,6 @@ spec:
       labels:
         app: anurag-sh
     spec:
-      serviceAccountName: anurag-sh
       tolerations:
         - key: "group"
           operator: "Equal"
