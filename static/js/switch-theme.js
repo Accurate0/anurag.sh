@@ -21,34 +21,15 @@ window.addEventListener(
   (e) => {
     const theme = e.detail.theme;
     localStorage.setItem("current-theme", theme);
+    document.cookie = `current-theme=${theme}`;
+
     const themeSrc = themes.get(theme);
     sakura.href = themeSrc.css;
   },
   { once: false },
 );
 
-const loadDefaultTheme = () => {
-  const current = localStorage.getItem("current-theme");
-  if (
-    window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches &&
-    current === null
-  ) {
-    window.dispatchEvent(
-      new CustomEvent(eventName, { detail: { theme: "dark" } }),
-    );
-  } else if (current === null) {
-    window.dispatchEvent(
-      new CustomEvent(eventName, { detail: { theme: "default" } }),
-    );
-  } else {
-    window.dispatchEvent(
-      new CustomEvent(eventName, { detail: { theme: current } }),
-    );
-  }
-};
-
-const switchSakuraTheme = () => {
+const switchTheme = () => {
   if (localStorage.getItem("current-theme") === "default") {
     window.dispatchEvent(
       new CustomEvent(eventName, { detail: { theme: "dark" } }),
@@ -61,10 +42,8 @@ const switchSakuraTheme = () => {
 };
 
 window.onload = () => {
-  loadDefaultTheme();
-
   document.getElementById("switch-theme").onclick = (e) => {
-    switchSakuraTheme();
+    switchTheme();
     e.preventDefault();
   };
 };

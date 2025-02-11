@@ -6,6 +6,7 @@ use axum::{
     routing::get,
     Router,
 };
+use axum_extra::extract::CookieJar;
 use tower_http::{
     services::ServeDir,
     trace::{DefaultOnRequest, DefaultOnResponse, TraceLayer},
@@ -15,7 +16,13 @@ use tracing::Level;
 
 #[derive(Template)]
 #[template(path = "index.html")]
-struct IndexTemplate {}
+struct IndexTemplate<'a> {
+    css_url: String,
+    background_color: String,
+    all_styles: &'a [&'static str],
+}
+
+const ALL_STYLES: [&str; 2] = ["/static/css/sakura.css", "/static/css/sakura-dark.css"];
 
 #[derive(Clone)]
 struct AppState {}
@@ -49,8 +56,33 @@ where
 }
 
 // basic handler that responds with a static string
-async fn index(State(_state): State<AppState>) -> Result<Html<String>, AppError> {
-    let index_template = IndexTemplate {};
+async fn index(State(_state): State<AppState>, jar: CookieJar) -> Result<Html<String>, AppError> {
+    let theme = jar
+        .get("current-theme")
+        .map(|c| c.value().to_owned())
+        .unwrap_or_else(|| "default".to_string());
+
+    tracing::info!("theme: {theme}");
+    let css_url = if theme == "dark" {
+        "/static/css/sakura-dark.css"
+    } else {
+        "/static/css/sakura.css"
+    }
+    .to_string();
+
+    let background_color = if theme == "dark" {
+        "#222222"
+    } else {
+        "#f9f9f9"
+    }
+    .to_string();
+
+    let index_template = IndexTemplate {
+        css_url,
+        background_color,
+        all_styles: &ALL_STYLES,
+    };
+
     Ok(axum::response::Html(index_template.render()?))
 }
 
