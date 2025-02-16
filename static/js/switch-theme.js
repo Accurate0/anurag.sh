@@ -30,15 +30,16 @@ window.addEventListener(
 );
 
 const switchTheme = () => {
-  if (localStorage.getItem("current-theme") === "default") {
-    window.dispatchEvent(
-      new CustomEvent(eventName, { detail: { theme: "dark" } }),
-    );
-  } else {
-    window.dispatchEvent(
-      new CustomEvent(eventName, { detail: { theme: "default" } }),
-    );
-  }
+  window.dispatchEvent(
+    new CustomEvent(eventName, {
+      detail: {
+        theme:
+          localStorage.getItem("current-theme") === "default"
+            ? "dark"
+            : "default",
+      },
+    }),
+  );
 };
 
 window.onload = () => {
