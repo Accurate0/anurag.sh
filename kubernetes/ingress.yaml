@@ -4,6 +4,9 @@ metadata:
   name: anurag-sh
   namespace: anurag-sh
   annotations:
+    nginx.ingress.kubernetes.io/limit-rps: "3"
+    nginx.ingress.kubernetes.io/limit-rpm: "30"
+    nginx.ingress.kubernetes.io/limit-connections: "5"
     cert-manager.io/cluster-issuer: letsencrypt-prod
 spec:
   ingressClassName: nginx
