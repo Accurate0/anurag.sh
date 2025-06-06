@@ -981,9 +981,9 @@ dependencies = [
 
 [[package]]
 name = "tunnelbana-etags"
-version = "0.1.1"
+version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9a2a217381f356e04f3228f06275b7770d42041c25de7403cb44a1aadcb2a6ac"
+checksum = "1f64c6fe004656a0b4952528351cdac0badbfc438532eff3d60362fe7891ca61"
 dependencies = [
  "blake3",
  "bytes",
