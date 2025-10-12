@@ -5,3 +5,6 @@ resources:
   - ingress.yaml
   - namespace.yaml
   - service.yaml
+  - gateway.yaml
+  - httproute.yaml
+  - client.policy.yaml
