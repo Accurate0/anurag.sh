@@ -8,7 +8,8 @@ spec:
     - anurag.sh
     - anurag.id.au
   parentRefs:
-    - name: anurag-sh-gateway
+    - name: shared-gateway
+      namespace: envoy-gateway-system
   rules:
     - backendRefs:
         - name: anurag-sh
