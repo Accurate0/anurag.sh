@@ -32,6 +32,7 @@ spec:
                         type: PathPrefix
                         value: /
     - repoURL: https://github.com/Accurate0/anurag.sh.git
+      name: application
       path: kubernetes
       kustomize:
         images:
