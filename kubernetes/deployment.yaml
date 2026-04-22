@@ -13,11 +13,6 @@ spec:
       labels:
         app: anurag-sh
     spec:
-      tolerations:
-        - key: "group"
-          operator: "Equal"
-          value: "external"
-          effect: "NoSchedule"
       containers:
         - name: anurag-sh
           image: anurag-sh:latest
