@@ -24,7 +24,8 @@ jobs:
     with:
       service-name: anurag-sh
       images: ghcr.io/accurate0/anurag-sh
-      manifests-path: projects/anurag-sh/manifests
+      manifests-path: projects/anurag-sh
+      values-file: projects/anurag-sh/image.values.yaml
       tag: ${{ github.sha }}
     secrets:
       FORGEJO_TOKEN: ${{ secrets.FORGEJO_CI_IMAGE_UPDATER }}
