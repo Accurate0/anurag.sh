@@ -15,16 +15,3 @@ jobs:
       image-name: anurag-sh
       build-args: |
         BINARY_NAME=anurag-sh
-
-  deploy:
-    needs:
-      - build
-    uses: anurag/workflows/.forgejo/workflows/deploy-image.yaml@main
-    with:
-      service-name: anurag-sh
-      images: registry.anurag.sh/containers/anurag-sh
-      manifests-path: projects/anurag-sh
-      values-file: projects/anurag-sh/image.values.yaml
-      tag: ${{ github.sha }}
-    secrets:
-      CI_IMAGE_UPDATER_TOKEN: ${{ secrets.CI_IMAGE_UPDATER_TOKEN }}
